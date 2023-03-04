@@ -18,7 +18,7 @@ RSpec.describe Post, type: :model do
 
   describe 'callbacks' do
     it 'increments the posts_counter of the post author after save' do
-      post = user.posts.build(title: 'Test Post',comments_counter: 0, likes_counter: 0)
+      post = user.posts.build(title: 'Test Post', comments_counter: 0, likes_counter: 0)
       expect { post.save }.to change { user.reload.posts_counter }.by(1)
     end
   end
@@ -31,4 +31,3 @@ RSpec.describe Post, type: :model do
     end
   end
 end
-
